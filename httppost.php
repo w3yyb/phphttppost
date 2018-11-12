@@ -1,4 +1,4 @@
- <?php
+<?php
 function http_post_data($url, $data_string, $json = false)
 {
     $ch = curl_init();
@@ -103,6 +103,11 @@ function changetext() {
     localStorage.removeItem("url");
     localStorage.removeItem("textcontent");
     //localStorage.clear();
+   url= document.getElementById("url").value;
+   content=document.getElementById("textdata").value;
+   localStorage.setItem("url", url);
+   localStorage.setItem("textcontent",  content);
+
    
 
 }
