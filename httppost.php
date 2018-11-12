@@ -1,4 +1,4 @@
-<?php
+ <?php
 function http_post_data($url, $data_string, $json = false)
 {
     $ch = curl_init();
@@ -45,13 +45,13 @@ if ($_POST) {
                     <tr>
                         <td>url:</td>
                         <td>
-                            <input type=text name="url" size=60 id="url">
+                            <input type=text name="url" size=60 id="url" onchange="changetext()">
                         </td>
                     </tr>
                     <tr>
                         <td>data:</td>
                         <td>
-                            <textarea name="data" rows="10" cols="62" id="textdata"></textarea>
+                            <textarea name="data" rows="10" cols="62" id="textdata" onchange="changetext()"></textarea>
                         </td>
                     </tr>
                     <tr>
@@ -96,6 +96,14 @@ function cleartext() {
     //localStorage.clear();
     document.getElementById("url").value = '';
     document.getElementById("textdata").value = '';
+
+}
+
+function changetext() {
+    localStorage.removeItem("url");
+    localStorage.removeItem("textcontent");
+    //localStorage.clear();
+   
 
 }
 </script>
